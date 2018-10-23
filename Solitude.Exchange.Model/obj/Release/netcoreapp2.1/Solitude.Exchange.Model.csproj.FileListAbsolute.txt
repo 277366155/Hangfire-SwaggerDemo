@@ -1,0 +1,9 @@
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Release\netcoreapp2.1\Solitude.Exchange.Model.deps.json
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Release\netcoreapp2.1\Solitude.Exchange.Model.dll
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Release\netcoreapp2.1\Solitude.Exchange.Model.pdb
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Release\netcoreapp2.1\Solitude.Exchange.Model.csprojAssemblyReference.cache
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Release\netcoreapp2.1\Solitude.Exchange.Model.csproj.CoreCompileInputs.cache
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Release\netcoreapp2.1\Solitude.Exchange.Model.AssemblyInfoInputs.cache
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Release\netcoreapp2.1\Solitude.Exchange.Model.AssemblyInfo.cs
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Release\netcoreapp2.1\Solitude.Exchange.Model.dll
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Release\netcoreapp2.1\Solitude.Exchange.Model.pdb

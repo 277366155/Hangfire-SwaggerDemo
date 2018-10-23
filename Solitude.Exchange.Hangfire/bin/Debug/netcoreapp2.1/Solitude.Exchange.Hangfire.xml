@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Solitude.Exchange.Hangfire</name>
+    </assembly>
+    <members>
+        <member name="T:Solitude.Exchange.Hangfire.Controllers.DefaultController">
+            <summary>
+            默认控制器
+            </summary>
+        </member>
+        <member name="P:Solitude.Exchange.Hangfire.Controllers.DefaultController.RunTimeSpan">
+            <summary>
+            间隔执行分钟数
+            </summary>
+        </member>
+        <member name="M:Solitude.Exchange.Hangfire.Controllers.DefaultController.UpdateData(Solitude.Exchange.Model.C2CParam)">
+            <summary>
+            处理数据
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Solitude.Exchange.Hangfire.Controllers.DefaultController.GetData(Solitude.Exchange.Model.C2CParam)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Solitude.Exchange.Hangfire.Startup.Redis">
+            <summary>
+            Redis 服务
+            </summary>
+        </member>
+    </members>
+</doc>

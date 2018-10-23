@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Solitude.Exchange.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Solitude.Exchange.Model.C2CParam">
+            <summary>
+            c2c方法参数模型
+            </summary>
+        </member>
+        <member name="P:Solitude.Exchange.Model.C2CParam.OrderNum">
+            <summary>
+            订单Id
+            </summary>
+        </member>
+        <member name="P:Solitude.Exchange.Model.C2CParam.CoinUnit">
+            <summary>
+            货币单位
+            </summary>
+        </member>
+        <member name="P:Solitude.Exchange.Model.ResultModel.Remark">
+            <summary>
+            货币单位
+            </summary>
+        </member>
+    </members>
+</doc>
