@@ -10,7 +10,8 @@
         "dependencies": {
           "Microsoft.Extensions.Configuration": "2.1.1",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.1.1",
-          "Microsoft.Extensions.Configuration.Json": "2.1.1"
+          "Microsoft.Extensions.Configuration.Json": "2.1.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.1.1.0"
         },
         "runtime": {
           "Solitude.Exchange.Core.dll": {}
@@ -122,6 +123,14 @@
             "fileVersion": "0.0.0.0"
           }
         }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.1.1.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
+        }
       }
     }
   },
@@ -207,6 +216,11 @@
       "sha512": "sha512-qUJMNWhbm9oZ3XaMFiEMiYmRPszbnXIkRIi7+4b2Md2xZ6JUOepf0/kY3S85qistRohl9OdMe4PsO+RdG2kTIQ==",
       "path": "system.runtime.compilerservices.unsafe/4.5.1",
       "hashPath": "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.1.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

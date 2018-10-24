@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.PlatformAbstractions;
 using Solitude.Exchange.Core;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Solitude.Exchange.Hangfire
@@ -26,6 +29,7 @@ namespace Solitude.Exchange.Hangfire
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //注册hangfire服务
             services.AddHangfire(config => config.UseRedisStorage(Redis));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -36,16 +40,28 @@ namespace Solitude.Exchange.Hangfire
 
                 //添加nuget包：Microsoft.Extensions.PlatformAbstractions
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "Solitude.Exchange.Hangfire.xml");
-                s.IncludeXmlComments(xmlPath,true);
+                s.IncludeXmlComments(Path.Combine(basePath, "Solitude.Exchange.Hangfire.xml"), true);
                 s.IncludeXmlComments(Path.Combine(basePath, "Solitude.Exchange.Model.xml"),true);
+
+                //添加header验证信息
+                //c.OperationFilter<SwaggerHeader>();
+                var security = new Dictionary<string, IEnumerable<string>> { { "Bearer", new string[] { } }, };
+                s.AddSecurityRequirement(security);//添加一个必须的全局安全信息，和AddSecurityDefinition方法指定的方案名称要一致，这里是Bearer。
+                s.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传输) 参数结构: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = "header",//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = "apiKey"
+                });
             });
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider svp)
         {
+            BaseCore.ServiceProvider = svp;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

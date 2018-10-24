@@ -25,6 +25,7 @@ namespace Solitude.Exchange.Hangfire.Controllers
         /// <param name="param"></param>
         /// <returns></returns>
         [HttpPost("update")]
+        [UserCheck]
         public ActionResult UpdateData(C2CParam param)
         {
             RecurringJob.AddOrUpdate("C2CUpdateOrder", () => new C2CService().C2CUpdate(param), Cron.MinuteInterval(RunTimeSpan));

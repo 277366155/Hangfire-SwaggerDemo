@@ -1,3 +1,4 @@
+E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Debug\netcoreapp2.1\Solitude.Exchange.Model.xml
 E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Debug\netcoreapp2.1\Solitude.Exchange.Model.deps.json
 E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Debug\netcoreapp2.1\Solitude.Exchange.Model.dll
 E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Debug\netcoreapp2.1\Solitude.Exchange.Model.pdb
@@ -6,4 +7,3 @@ E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Debug\ne
 E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Debug\netcoreapp2.1\Solitude.Exchange.Model.AssemblyInfo.cs
 E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Debug\netcoreapp2.1\Solitude.Exchange.Model.dll
 E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\obj\Debug\netcoreapp2.1\Solitude.Exchange.Model.pdb
-E:\workspace\Solitude.Exchange.HangfireCore\Solitude.Exchange.Model\bin\Debug\netcoreapp2.1\Solitude.Exchange.Model.xml

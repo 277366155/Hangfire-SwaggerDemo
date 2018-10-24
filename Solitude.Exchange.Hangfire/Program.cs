@@ -16,7 +16,6 @@ namespace Solitude.Exchange.Hangfire
             return WebHost.CreateDefaultBuilder(args)
             .UseConfiguration(BaseCore.Configuration)
             .UseStartup<Startup>();
-
         }
 
     }
