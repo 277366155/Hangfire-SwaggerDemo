@@ -124,19 +124,54 @@ namespace Solitude.Exchange.Core.Redis
     public class RedisHelper
     {
         private static RedisClient _redisClient;
-        private static IDatabase _db;
+        private static readonly string RedisLockKey = "LockKey";
+        private static readonly string RedisLockToken = "LockToken";
+
         static RedisHelper()
         {
             _redisClient= RedisCore.GetRedisClient();
-            _db = _redisClient.GetDatabase();
+            Db = _redisClient.GetDatabase();
         }
 
-        public static IDatabase Db
+        public static IDatabase Db { get; private set; }
+
+        /// <summary>
+        /// 开启redis事务锁
+        /// </summary>
+        /// <param name="lockKey"></param>
+        /// <param name="lockToken"></param>
+        /// <returns></returns>
+        public static bool LockTake(string lockKey=null,string lockToken=null)
         {
-            get
+            if (string.IsNullOrWhiteSpace(lockKey))
             {
-                return _db;
+                lockKey = RedisLockKey;
             }
+
+            if (string.IsNullOrWhiteSpace(lockToken))
+            {
+                lockToken = RedisLockToken;
+            }
+            return Db.LockTake(RedisLockKey, RedisLockToken, TimeSpan.FromSeconds(10));
+        }
+        /// <summary>
+        ///  释放redis事务锁
+        /// </summary>
+        /// <param name="lockKey"></param>
+        /// <param name="lockToken"></param>
+        /// <returns></returns>
+        public static bool LockRelease(string lockKey = null, string lockToken = null)
+        {
+            if (string.IsNullOrWhiteSpace(lockKey))
+            {
+                lockKey = RedisLockKey;
+            }
+
+            if (string.IsNullOrWhiteSpace(lockToken))
+            {
+                lockToken = RedisLockToken;
+            }
+            return Db.LockRelease(RedisLockKey, RedisLockToken);
         }
 
         public static string GetStringByKey(string key)
@@ -145,7 +180,7 @@ namespace Solitude.Exchange.Core.Redis
             {
                 return "";
             }
-           return _db.StringGet(key);
+           return Db.StringGet(key);
         }
 
         public static T GetDataByKey<T>(string key)
@@ -164,7 +199,7 @@ namespace Solitude.Exchange.Core.Redis
             {
                 return false;
             }
-           return  _db.StringSet(key,value,  expiry );
+           return  Db.StringSet(key,value,  expiry );
         }
 
         public static bool SetData<T>(string key, T value, TimeSpan? expiry = null)

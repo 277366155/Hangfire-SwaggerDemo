@@ -13,14 +13,13 @@ namespace Solitude.Exchange.SignalR
     {
         public static List<OrderInfo> OrderList;
         private readonly string ChatKey = "chat";
-        private readonly string RedisLockKey = "ChatLockKey";
-        private readonly string RedisLockToken = "ChatLockToken";
+
         public override Task OnConnectedAsync()
         {
             //加redis锁
             try
             {
-                if (RedisHelper.Db.LockTake(RedisLockKey, RedisLockToken, TimeSpan.FromSeconds(10)))
+                if (RedisHelper.LockTake())
                 {
                     var chatHistory = RedisHelper.GetStringByKey(ChatKey);
                     if (!string.IsNullOrWhiteSpace(chatHistory))
@@ -35,7 +34,7 @@ namespace Solitude.Exchange.SignalR
             }
             finally
             {
-                RedisHelper.Db.LockRelease(RedisLockKey, RedisLockToken);
+                RedisHelper.LockRelease();
             }
 
             return base.OnConnectedAsync();
@@ -52,7 +51,7 @@ namespace Solitude.Exchange.SignalR
             try
             {
                 var now = DateTime.Now;
-                if (RedisHelper.Db.LockTake(RedisLockKey, RedisLockToken, TimeSpan.FromSeconds(10)))
+                if (RedisHelper.LockTake())
                 {
                     var chatHistory = RedisHelper.GetDataByKey<List<User>>(ChatKey);
                     if (chatHistory == null)
@@ -71,7 +70,7 @@ namespace Solitude.Exchange.SignalR
             }
             finally
             {
-                RedisHelper.Db.LockRelease(RedisLockKey, RedisLockToken);
+                RedisHelper.LockRelease();
             }
         }
 
