@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solitude.Exchange.Hangfire"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solitude.Exchange.Core", "Solitude.Exchange.Core\Solitude.Exchange.Core.csproj", "{C0ED795D-EEA0-4934-BF2A-C95628B11F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitude.Exchange.Service", "Solitude.Exchange.Service\Solitude.Exchange.Service.csproj", "{1051DABE-CD79-4986-83D8-70C710DDFDC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solitude.Exchange.Service", "Solitude.Exchange.Service\Solitude.Exchange.Service.csproj", "{1051DABE-CD79-4986-83D8-70C710DDFDC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitude.Exchange.Model", "Solitude.Exchange.Model\Solitude.Exchange.Model.csproj", "{7AC884E0-EE16-4A0A-B029-FABECF00789F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Solitude.Exchange.Model", "Solitude.Exchange.Model\Solitude.Exchange.Model.csproj", "{7AC884E0-EE16-4A0A-B029-FABECF00789F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitude.Exchange.SignalR", "Solitude.Exchange.SignalR\Solitude.Exchange.SignalR.csproj", "{1D47D154-D7DA-40C3-9740-9C6793B22DD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7AC884E0-EE16-4A0A-B029-FABECF00789F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC884E0-EE16-4A0A-B029-FABECF00789F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AC884E0-EE16-4A0A-B029-FABECF00789F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D47D154-D7DA-40C3-9740-9C6793B22DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D47D154-D7DA-40C3-9740-9C6793B22DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D47D154-D7DA-40C3-9740-9C6793B22DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D47D154-D7DA-40C3-9740-9C6793B22DD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

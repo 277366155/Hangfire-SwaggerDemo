@@ -13,7 +13,7 @@ namespace Solitude.Exchange.Model
         {
             get
             {
-                return "测试内容，这里是备注信息。";
+                return "测试内容：这里是备注信息。";
             }
         }
     }

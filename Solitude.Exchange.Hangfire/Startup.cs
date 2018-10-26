@@ -22,7 +22,7 @@ namespace Solitude.Exchange.Hangfire
         /// <summary>
         /// Redis 服务
         /// </summary>
-        public static ConnectionMultiplexer Redis;
+        public static  ConnectionMultiplexer Redis;
         public Startup()
         {
             Redis = ConnectionMultiplexer.Connect(BaseCore.Configuration.GetConnectionString("HangfireRedis"));
