@@ -27,7 +27,7 @@ connection.on("GetHistoryMsg", function (history) {
     if (historyAttr.length > 0) {
         $.each(historyAttr, function (index,data) {
             var li = document.createElement("li");
-            li.textContent = "[" + data.CreateTime + "]：" + data.UserName + " 说 " + data.Msg;
+            li.textContent = "[" + data.BizCreateTime + "]：" + data.UserName + " 说 " + data.Msg;
             $("#messagesList").append(li);
         });
     }

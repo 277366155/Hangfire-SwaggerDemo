@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Newtonsoft.Json;
+using System;
+
 
 namespace Solitude.Exchange.Model
 {
@@ -33,7 +33,7 @@ namespace Solitude.Exchange.Model
     public class User
     {
         public string UserName { get; set; }
-        [NotMapped]
+        [JsonIgnore]
         public DateTime CreateTime { get; set; }
         public string Msg { get; set; }
 

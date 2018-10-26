@@ -8,4 +8,8 @@
     <DocumentationFile>bin\Debug\netcoreapp2.1\Solitude.Exchange.Model.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
 </Project>
