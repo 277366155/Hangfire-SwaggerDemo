@@ -59,9 +59,9 @@ namespace Solitude.Exchange.Hangfire
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider svp)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            BaseCore.ServiceProvider = svp;
+          
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

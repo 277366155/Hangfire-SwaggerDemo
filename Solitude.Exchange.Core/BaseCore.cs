@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using System;
+﻿using Microsoft.Extensions.Configuration;
 using System.IO;
 
 namespace Solitude.Exchange.Core
@@ -38,30 +36,6 @@ namespace Solitude.Exchange.Core
 
         #endregion 配置文件读取
 
-        #region HttpContext
-        public static IServiceProvider ServiceProvider { get; set; }
 
-        private static IHttpContextAccessor _currentAccessor;
-
-        public static IHttpContextAccessor CurrentAccessor
-        {
-            get
-            {
-                object factory = ServiceProvider.GetService(typeof(IHttpContextAccessor));
-                return (IHttpContextAccessor)factory;
-            }
-        }
-
-        /// <summary>
-        /// 当前http请求上下文
-        /// </summary>
-        public static HttpContext CurrentContext
-        {
-            get
-            {
-                return CurrentAccessor.HttpContext;
-            }
-        }
-        #endregion HttpContext
     }
 }

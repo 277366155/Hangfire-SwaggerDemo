@@ -69,7 +69,6 @@ namespace Solitude.Exchange.RabbitMQ
                 });
             });
 
-
             var msg = Console.ReadLine();
             var uri = new Uri(factory.RMQConfig["Host"]);
             bus.Start();
